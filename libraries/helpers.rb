@@ -11,7 +11,7 @@ module RsyslogCookbook
       service node['rsyslog']['service_name'] do
         supports :restart => true, :status => true
         action   [:enable, :start]
-        provider service_provider
+        provider Chef::Provider::Service::Upstart
       end
     end
   end
